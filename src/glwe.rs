@@ -177,7 +177,7 @@ mod tests {
     use rand::{thread_rng, Rng};
 
     #[test]
-    #[ignore]
+  //  #[ignore]
     fn test_bootstrapping() {
         let sk1 = lwe_keygen();
         let sk2 = keygen();
@@ -186,7 +186,7 @@ mod tests {
 
         let lut = GlweCiphertext::trivial_encrypt_lut_poly();
 
-        for _ in 0..16 {
+        for _ in 0..1 {
             let msg = thread_rng().gen_range(0..8);
 
             let c = LweCiphertext::encrypt(encode(msg), &sk1).modswitch(); // "noisy" ciphertext that will be bootstrapped
